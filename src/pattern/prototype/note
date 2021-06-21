@@ -8,14 +8,14 @@ eg.
 Resume resume = new Resume("大鸟");
 resume.setPersonalInfo("男","29");
 resume.setWorkExperience("1998-2001","XX公司");
-
 ByteArrayOutputStream bos = new ByteArrayOutputStream();
 ObjectOutputStream    oos = new ObjectOutputStream(bos);
 oos.writeObject(resume);
 byte[] bytes = bos.toByteArray();
-
 ByteArrayInputStream  bis = new ByteArrayInputStream(bytes);
 ObjectInputStream	  ois = new ObjectInputStream(bis);
-
 //克隆好的对象
 Resume resume = (Resume) ois.readObject();
+
+原型模式：实际上就是利用浅拷贝或是深拷贝实例化对象的一种模式，在需要大量new对象的场合，原型模式将会极大的节省资源。
+原型模式一般都和工厂模式一起搭配使用，很少单独使用
