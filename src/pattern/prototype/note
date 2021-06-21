@@ -1,0 +1,21 @@
+浅拷贝：浅拷贝只会拷贝基本数据类型和引用数据类型，而不会拷贝对象中关联的引用对象类型
+深拷贝：就是将所有的字段，包括引用的对象类型。
+
+关于怎么深拷贝，
+一是可以在浅拷贝的基础上，再拷贝一次引用的对象类型
+二是可以利用序列化和反序列化实现深复制
+eg.
+Resume resume = new Resume("大鸟");
+resume.setPersonalInfo("男","29");
+resume.setWorkExperience("1998-2001","XX公司");
+
+ByteArrayOutputStream bos = new ByteArrayOutputStream();
+ObjectOutputStream    oos = new ObjectOutputStream(bos);
+oos.writeObject(resume);
+byte[] bytes = bos.toByteArray();
+
+ByteArrayInputStream  bis = new ByteArrayInputStream(bytes);
+ObjectInputStream	  ois = new ObjectInputStream(bis);
+
+//克隆好的对象
+Resume resume = (Resume) ois.readObject();
