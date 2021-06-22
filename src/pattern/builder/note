@@ -1,0 +1,7 @@
+example1 与 example2 分别对应两种实现建造者模式的方式
+
+example2与example1 的区别就在于，example2的建造者模式没有Director指挥者
+更像是一个自动的流水线式的建造，每个部分的建造都返回抽象建造者的类Builder，直到
+建造完了才通过build()方法返回具体的产品。
+而example1,则每次建造一个部分都返回一个产品示例，最后由Director指挥者去统筹建造
+的每个方法生产具体的Product
