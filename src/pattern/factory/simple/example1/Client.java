@@ -12,5 +12,11 @@ public class Client {
         operation.setNumA(3.0);
         operation.setNumB(5.0);
         System.out.println(operation.getResult());
+
+        Operation operation1 = OperationFactory.createOperation("pattern.factory.simple.example1.OperationDiv",
+                OperationDiv.class);
+        operation1.setNumA(15);
+        operation1.setNumB(3);
+        System.out.println(operation1.getResult());
     }
 }
