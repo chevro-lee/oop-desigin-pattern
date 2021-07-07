@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 /**
  * Author li.ling
- * Description
+ * Description 创建共享实例的工厂
  * Date 2021/7/5 19:27
  */
 public class FlyweightFactory {

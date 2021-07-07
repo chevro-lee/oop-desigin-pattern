@@ -2,7 +2,7 @@ package pattern.flyweight.example1;
 
 /**
  * Author li.ling
- * Description
+ * Description 不共享的实例
  * Date 2021/7/5 19:20
  */
 public class UnsharedConcreteFlyweight extends Flyweight {
